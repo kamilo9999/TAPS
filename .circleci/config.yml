@@ -1,5 +1,5 @@
 orbs:
-  cypres: cypress-io/cypress@2.2.0
+  cypress: cypress-io/cypress@2.2.0
 workflows:
   build:
     jobs:
