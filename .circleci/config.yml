@@ -11,11 +11,8 @@ workflows:
             store_artifacts: true  
             parallel: true
             parallelism: 3
-            group: 3 machines
-            steps:
-              - run:
-                  command: |
-                    echo $(circleci tests glob "cypress/e2e/**/*")
-                    circleci tests glob "cypress/e2e/**/*" | xargs -n 1 echo
-
-  
+            # steps:
+            #   - checkout 
+            #   - run:
+            #       command: 
+            #         - npm run "e2e/**"
