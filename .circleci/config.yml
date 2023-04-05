@@ -5,5 +5,5 @@ workflows:
   use-my-orb:
     jobs:
       - cypress/run:
-          cypress-command:  npx cypress run --spec "cypress/e2e/TS1.cy.js"
+          cypress-command:  npx cypress run --spec "cypress/e2e/TS1.cy.js, cypress/e2e/TS2.cy.js"
           parallelism: 3
