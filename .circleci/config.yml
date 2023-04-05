@@ -6,10 +6,7 @@ workflows:
     jobs:
       - cypress/run:
           cypress-command:  npx cypress run --spec "cypress/e2e/TS1.cy.js"
-          parallelism: 3
       - cypress/run:
-          cypress-command:  npx cypress run --spec "cypress/e2e/TS2.cy.js"
-          parallelism: 3    
+          cypress-command:  npx cypress run --spec "cypress/e2e/TS2.cy.js"   
       - cypress/run:
-          cypress-command:  npx cypress run --spec "cypress/e2e/TS3.cy.js"
-          parallelism: 3    
+          cypress-command:  npx cypress run --spec "cypress/e2e/TS3.cy.js"  
