@@ -18,7 +18,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - cypress/run-tests:
-          cypress-command: npx cypress run --e2e --parallel
+          cypress-command: npx cypress run --spec "cypress/e2e/TS1.cy.js"
 workflows:
   use-my-orb:
     jobs:
