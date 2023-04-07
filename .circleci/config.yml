@@ -20,5 +20,5 @@ workflows:
           
             store_artifacts: true
             parallel: true
-            parallelism: 2
+            parallelism: 3
             group: 2 machines
