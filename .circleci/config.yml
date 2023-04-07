@@ -1,12 +1,24 @@
-version: '2.1'
+version: 2.1
 orbs:
-  cypress: cypress-io/cypress@3
+  cypress: cypress-io/cypress@2.2.0
 workflows:
-  use-my-orb:
+  build:
     jobs:
-      - cypress/run:
-          cypress-command:  npx cypress run --spec "cypress/e2e/TS1.cy.js"
-      - cypress/run:
-          cypress-command:  npx cypress run --spec "cypress/e2e/TS2.cy.js"   
-      - cypress/run:
-          cypress-command:  npx cypress run --spec "cypress/e2e/TS3.cy.js"  
+        - cypress/install    
+        - cypress/run:
+            name: "TS1"
+            install-command: npm i
+            spec: cypress/e2e/TS1.cy.js
+        - cypress/run:
+            name: "TS2"
+            install-command: npm i
+            spec: cypress/e2e/TS2.cy.js
+        - cypress/run:
+            name: "TS3"
+            install-command: npm i
+            spec: cypress/e2e/TS3.cy.js    
+          
+            store_artifacts: true
+            parallel: true
+            parallelism: 2
+            group: 2 machines
